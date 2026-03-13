@@ -1,5 +1,16 @@
 # Cybersecurity Home Lab
 
+## Lab Goals
+
+This home lab was built to practice real-world cybersecurity tasks such as:
+
+- network segmentation with VLANs
+- firewall rule design and traffic control
+- reconnaissance and host triage
+- Windows and Linux service exposure analysis
+- testing automation tools such as AutoRecon AI
+
+The lab environment simulates a small segmented infrastructure where security testing can be performed safely.
 Personal cybersecurity home lab built for hands-on learning, network segmentation, defensive testing, and offensive security practice.
 
 This lab is designed to simulate a small segmented environment with:
@@ -33,7 +44,18 @@ This lab is designed to simulate a small segmented environment with:
 - AutoRecon AI for local-first recon and triage
 
 ---
+## Skills Demonstrated
 
+This lab demonstrates hands-on experience with:
+
+- network segmentation and VLAN design
+- firewall configuration and traffic control
+- host discovery and reconnaissance
+- service enumeration and triage
+- lab-based penetration testing workflows
+- AI-assisted analysis for security triage
+
+---
 ## Repository Structure
 
 ```text
@@ -44,7 +66,7 @@ cybersecurity-home-lab
 ├── attack-scenarios
 └── README.md
 ```
-
+```
 Included Documentation
 	•	firewall/opnsense-vlan-setup.md
 Overview of VLAN design and firewall logic
@@ -58,14 +80,14 @@ Vulnerable target overview
 Dedicated Ollama-based AI analysis node
 	•	attack-scenarios/recon-workflow.md
 Example reconnaissance workflow using AutoRecon AI
-
+```
 ⸻
 
 Related Project
-
+```
 This lab uses the following custom reconnaissance tool:
 	•	AutoRecon AI￼
-
+```
 ⸻
 
 Security Notice

@@ -22,7 +22,60 @@ This lab is designed to simulate a small segmented environment with:
 - local AI-assisted reconnaissance tooling
 
 ---
+## Lab Architecture
 
+The lab network is segmented using OPNsense firewall and multiple VLANs to simulate a small enterprise-style environment.
+```
+Internet
+   │
+OPNsense Firewall / Router
+   │
+────────────────────────────────────────────────────
+│            │             │             │          │
+│            │             │             │          │
+VLAN1        VLAN200       VLAN210       VLAN300    VLAN400
+Management   Server Zone   AI Analysis   Pentest    IoT
+                             Zone        Lab-KALI
+│            │             │             │          │
+│            │             │             │          ├─ Home Assistant
+│            │             │             │          └─ IoT Devices
+│            │             │
+│            │             └─ LLM Server (Ollama)
+│            │
+│            ├─ Windows Server (Active Directory)
+│            ├─ Windows Client Machines
+│            └─ Metasploitable (pivot / escalation target)
+│
+│                                        └─ Kali Linux (attacker machine)
+│
+└─ Management Access
+   ├─ OPNsense Admin
+   ├─ Switch Management
+   └─ Lab Administration
+```
+### Network Segmentation Strategy
+```
+The lab network is segmented using multiple VLANs to simulate a small enterprise environment.
+
+VLAN1 – Management
+Used for administrative access to infrastructure components such as the firewall and network switch.
+
+VLAN200 – Server Zone
+Contains Windows Server (Active Directory), Windows clients, and a vulnerable Metasploitable host used for pivoting and privilege escalation scenarios.
+
+VLAN210 – AI Analysis Zone
+Dedicated network segment hosting the LLM server running Ollama. This system provides AI-assisted reconnaissance analysis and is isolated from vulnerable targets.
+
+VLAN300 – Pentest Lab
+Contains the Kali Linux attacker machine used to perform reconnaissance and security testing within the lab.
+
+VLAN400 – IoT Network
+Isolated network hosting Home Assistant and IoT devices to simulate a consumer automation environment.
+
+Inter-VLAN traffic is controlled by OPNsense firewall rules following a default-deny strategy.
+Only specific traffic required for lab testing is allowed between segments.
+
+```
 ## Goals
 
 - practice network reconnaissance safely

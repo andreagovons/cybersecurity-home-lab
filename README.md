@@ -97,6 +97,19 @@ Only specific traffic required for lab testing is allowed between segments.
 - AutoRecon AI for local-first recon and triage
 
 ---
+## Active Directory Environment
+
+The lab includes a Windows Server environment configured with Active Directory to simulate a typical enterprise network.
+
+This allows practicing:
+
+- domain-based authentication
+- Windows service enumeration
+- SMB and RPC analysis
+- privilege escalation scenarios
+- lateral movement simulations
+
+---
 ## Skills Demonstrated
 
 This lab demonstrates hands-on experience with:
